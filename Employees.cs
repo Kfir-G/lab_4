@@ -8,13 +8,25 @@ namespace Lab_4
     {
         public enum Days { Sunday = 1, Monday, Tuesday, Wednesday, Thursday, Friday, Satuerday }
 
+        public static int employeeCounter;
+
         //data fields:
         string name;
         int age;
         int id;
         Days day;
 
-        public static int employeeCounter;
+        //constructor
+        public Employees (string name, int age, int id)
+        {
+            this.name = name;
+            this.age = age;
+            if (id > 0)
+                this.id = id;
+            else
+                this.id = -1;
+            employeeCounter++;
+        }
 
         //property:
         public string Name 
@@ -38,5 +50,17 @@ namespace Lab_4
             get { return id; }
         }
         public static int EmployeeCount { get => employeeCounter}
+
+        //methods:
+        public void PrintDetails()
+        {
+            Console.WriteLine("Worker details:");
+            Console.WriteLine("Name: " + this.name + "\nAge: " + this.age + "\nID: " + this.id + "\nDays: " + this.day);
+        }
+        public void PrintEmployee()
+        { //withuot days of work
+            Console.WriteLine("Worker details:");
+            Console.WriteLine("Name: " + this.name + "\nAge: " + this.age + "\nID: " + this.id);
+        }
     }
 }
