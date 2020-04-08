@@ -14,7 +14,29 @@ namespace Lab_4
         int id;
         Days day;
 
-        public static int workersCounter;
+        public static int employeeCounter;
 
+        //property:
+        public string Name 
+        {
+            get;
+            set;
+        }
+        public int Age 
+        {
+            get;
+            set;
+        }
+        public Days Day
+        {
+            get;
+            set;
+        }
+
+        public int GetId //read only        
+        {
+            get { return id; }
+        }
+        public static int EmployeeCount { get => employeeCounter}
     }
 }
